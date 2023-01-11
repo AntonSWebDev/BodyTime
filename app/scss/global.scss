@@ -1,0 +1,136 @@
+@mixin vanta-400 {
+	font-family: 'Vanta', sans-serif;
+	font-weight: normal;
+}
+@mixin vantaLight-400 {
+	font-family: 'Vanta-Light', sans-serif;
+	font-weight: normal;
+}
+
+$bgColor: #E5E5E5;
+$textColor: #363431;
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	height: 100%;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+body {
+	@include vanta-400;
+	font-size: 16px;
+	line-height: 20px;
+	background: #fff;
+	color: #000;
+	height: 100%;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+button {
+	cursor: pointer;
+}
+.container {
+	padding: 0 160px;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	bottom: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+.lock {
+	overflow: hidden;
+}
+.main-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.header {
+	flex: 1 0 auto;
+}
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+.hidden {
+	display: none;
+}
+.title{
+	@include vanta-400;
+	font-size: 48px;
+	line-height: 46px;
+	text-align: center;
+}
+.footer-suptitle {
+	@include vantaLight-400;
+	font-size: 16px;
+	line-height: 16px;
+	color: $textColor;
+	text-transform: uppercase;
+}
+.btn {
+	font-size: 18px;
+	@include vantaLight-400;
+	line-height: 18px;
+	padding: 25px 20px;
+	border: 1px solid #fff;
+	border-radius: 8px;
+	transition: all .5s ease;
+	&:hover {
+		background: #fff;
+		color: #363431;
+	}
+	@media (max-width: 768px) {
+		&:hover {
+			background: transparent;
+			color: #fff;
+		}
+	}
+	@media (max-width: 425px) {
+		font-size: 12px;
+		line-height: 12px;
+	}
+}
+@media (max-width: 1024px) {
+	.container{
+		padding: 0 80px;
+	} 
+}
+@media (max-width: 600px) {
+	.container{
+		padding: 0 40px;
+	} 
+}
+@media (max-width: 425px) {
+	.container{
+		padding: 0 25px;
+	} 
+	.title {
+		font-size: 28px;
+		line-height: 36px;
+	}
+}
+@media (max-width: 375px) {
+	.container{
+		padding: 0 15px;
+	} 
+}
